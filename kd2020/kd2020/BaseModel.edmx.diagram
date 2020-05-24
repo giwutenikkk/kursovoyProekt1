@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b71e974d32a540ebbae9a7f3b66d20e9" Name="Diagram1">
+        <EntityTypeShape EntityType="tourfirmModel.clients" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourfirmModel.country" Width="1.5" PointX="1.5" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourfirmModel.roles" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourfirmModel.staffs" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourfirmModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourfirmModel.tickets" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourfirmModel.tours" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tourfirmModel.towns" Width="1.5" PointX="1.5" PointY="15.5" IsExpanded="true" />
+        <AssociationConnector Association="tourfirmModel.FK_tickets_clients" ManuallyRouted="false" />
+        <AssociationConnector Association="tourfirmModel.FK_towns_country" ManuallyRouted="false" />
+        <AssociationConnector Association="tourfirmModel.FK_roles_staffs" ManuallyRouted="false" />
+        <AssociationConnector Association="tourfirmModel.FK_tickets_staffs" ManuallyRouted="false" />
+        <AssociationConnector Association="tourfirmModel.FK_tickets_tours" ManuallyRouted="false" />
+        <AssociationConnector Association="tourfirmModel.FK_tours_towns" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,49 @@
+﻿<Page x:Class="kd2020.Pages.AddEditrole"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kd2020.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditrole">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="182,29.8,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Фамилия сотрудника" VerticalAlignment="Top" Height="34" Width="120" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,29.8,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" Height="35" Width="105" TextAlignment="Center" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="182,30.4,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top" Height="23" Width="120" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,30.4,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Роль" VerticalAlignment="Top" Height="23" Width="105" TextAlignment="Center" Grid.Column="1" RenderTransformOrigin="0.249,-0.061"/>
+        <ScrollViewer  Name="staffscroll" HorizontalAlignment="Left" Height="76" Margin="182,74.8,0,0" Grid.Row="1" AllowDrop="True" VerticalAlignment="Top" Width="123" Grid.RowSpan="3" CanContentScroll="True"  VerticalScrollBarVisibility="Visible"/>
+        <TextBox Name="login1" Text="{Binding login}" HorizontalAlignment="Left" Height="23" Margin="100,9.6,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <TextBox Text="{Binding password}" HorizontalAlignment="Left" Height="23" Margin="182,10,0,0" Grid.Row="4" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Text="{Binding role}" HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+        <Button Name="BtnSave" Click="BtnSave_Click" Grid.ColumnSpan="2" Margin="334,10.2,365,23.6" Grid.Row="5" Content="Сохранить" Height="23.2" Width="100.8">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Назад" Name="Back" Click="Back_Click" Grid.Column="1" HorizontalAlignment="Left" Margin="145,18.8,0,0" Grid.Row="5" VerticalAlignment="Top" Width="100" Height="23">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>
