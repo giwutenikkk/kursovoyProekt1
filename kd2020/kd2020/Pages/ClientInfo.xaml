@@ -1,0 +1,43 @@
+﻿<Page x:Class="kd2020.Pages.ClientInfo"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:local="clr-namespace:kd2020.Pages"
+mc:Ignorable="d"
+d:DesignHeight="450" d:DesignWidth="800"
+Title="ClientInfo">
+
+    <Grid>
+        <ScrollViewer Name="ClnInfo" HorizontalAlignment="Left" Height="134" Margin="25,94,0,0" VerticalAlignment="Top" Width="260"/>
+        <ListView Name="InfoCln" HorizontalAlignment="Left" Height="172" Margin="290,78,0,0" VerticalAlignment="Top" Width="500" IsSynchronizedWithCurrentItem="True" Background="#FFFBFBFB">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Номер паспорта" DisplayMemberBinding="{Binding pasportNum}"/>
+                    <GridViewColumn Header="Серия паспорта" DisplayMemberBinding="{Binding pasportSer}"/>
+                    <GridViewColumn Header="Город" DisplayMemberBinding="{Binding townName}"/>
+                    <GridViewColumn Header="Номер путёвки" DisplayMemberBinding="{Binding idTicket}"/>
+                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding priCe}"/>
+                    <GridViewColumn Header="Дата Отъезда" DisplayMemberBinding="{Binding dateO}"/>
+                    <GridViewColumn Header="Дата Приезда" DisplayMemberBinding="{Binding dateP}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Сохранить путёвку" HorizontalAlignment="Left" Margin="321,373,0,0" VerticalAlignment="Top" Width="131" Click="ButS" Height="23">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="BtnT" Click="BtnT_Click" Content="Таблицы" HorizontalAlignment="Left" Margin="163,373,0,0" VerticalAlignment="Top" Width="101" Height="23">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

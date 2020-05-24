@@ -1,0 +1,59 @@
+﻿<Page x:Class="kd2020.Pages.AddEdittour"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kd2020.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEdittour">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="375*"/>
+            <ColumnDefinition Width="234*"/>
+            <ColumnDefinition Width="191*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <TextBlock TextAlignment="Center" Text="Номер тура" Height="23" Margin="127,16.4,163.2,10.2" Grid.Row="1" Width="85"></TextBlock>
+        <TextBlock TextAlignment="Center" Text="Город" Margin="42.2,16.4,44,10.2" Grid.Row="1" Height="23" Width="105" Grid.Column="2"></TextBlock>
+        <TextBlock TextAlignment="Center" Text="Количество дней" Margin="42.8,16.4,75.8,11.2" Grid.Row="1" Height="22" Width="115" Grid.Column="1"></TextBlock>
+        <TextBlock TextAlignment="Center" Text="Дата отъезда" Margin="113,15.6,177.2,10.2" Grid.Row="3" Height="23" Width="85"></TextBlock>
+        <TextBlock TextAlignment="Center" Text="Дата приезда" Margin="71.8,15.6,75.8,8.2" Grid.Row="3" Height="25" Width="86" Grid.Column="1"/>
+        <TextBlock TextAlignment="Center" Text="Количество путёвок" Margin="100,10.4,150.2,13.2" Grid.Row="5" Height="26" Width="125"></TextBlock>
+        <TextBlock TextAlignment="Center" Text="Цена" Margin="82.8,10.4,89.8,7.2" Grid.Row="5" Height="32" Width="61" Grid.Column="1"></TextBlock>
+        <TextBox IsEnabled="False" Text="{Binding tourId}" Width="175" HorizontalAlignment="Left" Grid.Row="2" Margin="77,10.8,0,10.4"/>
+        <TextBox Text="{Binding daysQnt}" Grid.Column="1" Margin="9.8,10.8,0,10.4" Grid.Row="2" Width="175" HorizontalAlignment="Left"></TextBox>
+        <TextBox Text="{Binding ticketQnt}" Margin="77,9.8,0,10.6" Grid.Row="6" Width="175" HorizontalAlignment="Left"/>
+        <TextBox Text="{Binding tourPrice}" Margin="9.8,10.8,0,9.6" Grid.Row="6" Width="175" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Button Content="Сохранить" Grid.Row="8" Margin="320,17.8,187.8,9.6" Width="Auto" Name="BtnSave" Click="BtnSave_Click" Height="Auto" Grid.ColumnSpan="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="0.992"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <ScrollViewer Name="townsscroll" Grid.Column="2" HorizontalAlignment="Left" Height="151" Margin="42.2,49.4,0,0" Grid.Row="1" AllowDrop="True" VerticalAlignment="Top" Width="123" Grid.RowSpan="5" CanContentScroll="True"  VerticalScrollBarVisibility="Visible"/>
+        <DatePicker Name="DD" DisplayDate="{Binding dateDeparture}" HorizontalAlignment="Left" Margin="100,9.8,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" Width="121" DisplayDateStart="11.01.2019"/>
+        <DatePicker Name="DA" DisplayDate="{Binding dateArrive}" Grid.Column="1" HorizontalAlignment="Left" Margin="58.8,9.8,0,0" Grid.Row="4" VerticalAlignment="Top" Height="29" Width="112" DisplayDateStart="11.02.2019"/>
+        <Button Name="Back" Click="Back_Click" Content="Назад" Grid.Column="1" HorizontalAlignment="Left" Margin="102.8,17.8,0,0" Grid.Row="8" VerticalAlignment="Top" Width="101" Height="23">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="0.992"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

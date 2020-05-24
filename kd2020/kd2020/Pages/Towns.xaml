@@ -1,0 +1,64 @@
+﻿<Page x:Class="kd2020.Pages.Towns"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kd2020.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Towns" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="141*"/>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Таблицы" x:Name="BtnT" HorizontalAlignment="Center" Margin="349,46.8,351,8.6" Width="100" Click="BtnT_Click" Height="23" Grid.Row="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="DgridTowns" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,66,0,0.2" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер города" Binding="{Binding townId}" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Header="Страна" Binding="{Binding country.countryName}" Width="200"></DataGridTextColumn>
+                <DataGridTextColumn Header="Город" Binding="{Binding townName}" Width="*"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="EditBtnT" Content="Редактировать" Click="EditBtnT_Click">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFDEECEC" Offset="0"/>
+                                        <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" HorizontalAlignment="Left" x:Name="AddBtn" Margin="145,46.8,0,8.6" Width="100" Click="AddBtn_Click" Height="23.2" Grid.Row="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Удалить" HorizontalAlignment="Right" x:Name="DelBtn" Margin="0,46.8,145,8.6" Width="101" Click="DelBtn_Click" Height="23.2" Grid.Row="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

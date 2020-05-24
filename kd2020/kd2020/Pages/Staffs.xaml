@@ -1,0 +1,69 @@
+﻿<Page x:Class="kd2020.Pages.Staffs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:kd2020.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Staffs" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="141*"/>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Таблицы" x:Name="BtnT" Click="BtnT_Click" HorizontalAlignment="Center" Margin="349,46.8,351,8.6" Width="100" Grid.Row="2" Height="23" VerticalContentAlignment="Center">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="DgridStaffs" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,66,0,6.2" Grid.RowSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер сотрудника" Binding="{Binding staffId}" Width="120"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding lname}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding fname}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding mname}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер паспорта" Binding="{Binding passportId}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Серия паспорта" Binding="{Binding passportSer}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата приема" Binding="{Binding dateEmployment}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding phoneNum}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Editbtn" Content="Редактировать" Click="Editbtn_Click">
+                                <Button.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFDEECEC" Offset="0"/>
+                                        <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Button.Background>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="BtnAdd" Click="BtnAdd_Click" Content="Добавить" HorizontalAlignment="Left" Margin="145,46.8,0,8.6" Grid.Row="2" Width="100" Height="23" VerticalContentAlignment="Center">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="BtnDel" Click="BtnDel_Click" Content="Удалить" HorizontalAlignment="Right" Margin="0,46.8,145,8.6" Grid.Row="2" Width="100" Height="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDEECEC" Offset="0"/>
+                    <GradientStop Color="#FFFFC6AC" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>
